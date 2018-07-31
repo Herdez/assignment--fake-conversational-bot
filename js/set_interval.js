@@ -1,8 +1,4 @@
 
-var counter = 0;
-var text = document.querySelector('.main');
-var textOfTarget = "";
-
 
 function setTimeOf(mseconds, query, str) {
 	setTimeout(function() {
@@ -14,7 +10,7 @@ function setTimeOf(mseconds, query, str) {
 function getValueOfInput() {
 	var form = document.querySelector('form').addEventListener('submit', function(e){
 	  e.preventDefault();
-	  textOfTarget = e.target.elements.username.value; 
+	  var textOfTarget = e.target.elements.username.value; 
 	  if (textOfTarget !== "") { 
 		  if (textOfTarget.length > 6) {
 			    setTimeOf(1000, 'text4', "That’s a long name.");
@@ -34,20 +30,8 @@ function running() {
 	    var textInput = document.querySelector('.main__bot').style.display = 'block';
 		getValueOfInput();
 	}, 4000);
-	// if (counter === 1) {
-	// 	document.querySelector('#text1').innerText =  'Hello, my name is Herdez';
-	// } else if (counter === 2) {
-	// 	document.querySelector('#text2').innerText = 'I was an RoR Developer, but right now I’m studying Web Development.';
-	// } else if (counter === 3) {
-	// 	document.querySelector('#text3').innerText = 'I like to watch movies and read books.';
-	// } else if (counter === 4) {
-	// 	var textInput = document.querySelector('.input-bot').style.display = 'block';
-	// 	getValueOfInput();
-	// 	clearInterval(time);		
-	// }
-	// counter++;
+
 }
 
 
-//var time = setInterval(running, 1000);
 running();
